@@ -39,5 +39,8 @@ public class Course {
 	}
 	
 	
+	public String toString() { 
+	    return "Name:" + this.name + ", Code: " + this.code + ", Credit Hour: " + this.creditHr + ", Score: "+ this.score + ", Grade: " + this.grade ;
+	}
 	
 }
