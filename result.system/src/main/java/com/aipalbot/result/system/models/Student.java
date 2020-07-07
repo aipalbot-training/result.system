@@ -16,13 +16,8 @@ public class Student {
     
 	
 	public Student(String id, String name) {
-		this(id);		
-		this.id = id;
+			this.id = id;
 		this.name = name;	
-	}
-	
-	public Student(String id) {
-		this.id =id;
 	}
 	
 

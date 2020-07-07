@@ -75,4 +75,9 @@ public class App
     }
     
     
+    
+    public static void enterScores(Student student) {
+    	
+    	for()
+    }
 }
