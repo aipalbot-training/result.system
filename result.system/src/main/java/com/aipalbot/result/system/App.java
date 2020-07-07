@@ -76,8 +76,8 @@ public class App
     
     
     
-    public static void enterScores(Student student) {
-    	
-    	for()
-    }
+//    public static void enterScores(Student student) {
+//    	
+//    	for()
+//    }
 }
