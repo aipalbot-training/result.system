@@ -2,8 +2,8 @@ package com.aipalbot.result.system.models;
 
 import java.util.List;
 
-import com.aipalbot.result.system.utility.Department;
-import com.aipalbot.result.system.utility.Gender;
+import com.aipalbot.result.system.util.Department;
+import com.aipalbot.result.system.util.Gender;
 
 public class Student {
 

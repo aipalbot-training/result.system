@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.aipalbot.result.system.models.Course;
+import com.aipalbot.result.system.models.Student;
 import com.aipalbot.result.system.services.StudentService;
-import com.aipalbot.result.system.utility.Terminate;
+import com.aipalbot.result.system.util.Department;
+import com.aipalbot.result.system.util.Gender;
+import com.aipalbot.result.system.util.Terminate;
 
 /**
  * Hello world!
@@ -13,20 +16,48 @@ import com.aipalbot.result.system.utility.Terminate;
  */
 public class App 
 {
+	
+   static StudentService service; 
+    
     public static void main( String[] args )
     {
-        System.out.println( "Welcome to Student Result System 1.0 :-) :-) :-)" );
+    	 service = new StudentService();
+       
+    	 System.out.println( "Welcome to Student Result System 1.0 :-) :-) :-)" );
       
         enterCourses();
         
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Enter student name");               
+        String name = input.nextLine();
+        
+        System.out.println("Enter student id");
+        String id = input.nextLine();
+        
+        System.out.println("Enter student gender");
+        String gender = input.nextLine();
+        
+        System.out.println("Enter student department");
+        String dept = input.nextLine();
+        
+     
+           
+        
+      Student student =   service.createStudent(name, id, gender, dept);
+      
+      enterScores(student);
+      
+      
+      System.out.println("End of my program!!!");
+
     }
     
     public static void enterCourses() {
     	 
     	int count=1;
     	
-    	StudentService service = new StudentService();
-    	
+    	   	
         while(true) {
         	
         	System.out.println("Begin to register course " + count);
@@ -76,8 +107,13 @@ public class App
     
     
     
-//    public static void enterScores(Student student) {
-//    	
-//    	for()
-//    }
+    public static void enterScores(Student student) {
+    	
+    	for(Course course: student.getCourses()) {
+    		System.out.println("Enter score for Course " + course.getName());
+    		Scanner in = new Scanner(System.in);
+    		double score = in.nextDouble();
+    		course.setScore(score);    		
+    	}
+    }
 }
