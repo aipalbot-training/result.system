@@ -7,6 +7,41 @@ public class Course {
 	public String grade;
 	public String name;
 	public double score;
+	public double point;
+	public double pointCreditHr;
+	
+	   public static int countCourseInstances;	
+	   static {
+		   countCourseInstances=0;
+	   }
+	   
+	   public Course() {
+		  countCourseInstances++;
+	   }
+	   	    
+	    public static int getTotalNumberOfObjectsCreated() {
+	    	return countCourseInstances;
+	    }
+	
+	    
+	    
+	
+	public double getPointCreditHr() {
+			return pointCreditHr;
+		}
+
+		public void setPointCreditHr(double ponitCreditHr) {
+			this.pointCreditHr = ponitCreditHr;
+		}
+
+	public double getPoint() {
+			return point;
+		}
+
+		public void setPoint(double point) {
+			this.point = point;
+		}
+
 	public String getCode() {
 		return code;
 	}
@@ -40,7 +75,13 @@ public class Course {
 	
 	
 	public String toString() { 
-	    return "Name:" + this.name + ", Code: " + this.code + ", Credit Hour: " + this.creditHr + ", Score: "+ this.score + ", Grade: " + this.grade ;
+	    return "Name:" + this.name 
+	    		+ ", Code: " + this.code 
+	    		+ ", Credit Hour: " + this.creditHr 
+	    		+ ", Score: "+ this.score 
+	    		+ ", Grade: " + this.grade
+	    		+ ", Point: " + this.point
+	    		+ ", PointByCreditHour: " + this.pointCreditHr;
 	}
 	
 }

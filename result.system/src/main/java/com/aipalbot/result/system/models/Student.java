@@ -14,7 +14,11 @@ public class Student {
 	public List<Course> courses;
     private ReportCard reportCard;
     
+
 	
+    
+    
+    
 	public Student(String id, String name) {
 			this.id = id;
 		this.name = name;	

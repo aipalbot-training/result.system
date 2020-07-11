@@ -1,14 +1,16 @@
 package com.aipalbot.result.system.models;
 
+import com.aipalbot.result.system.util.GradingScale;
+
 public class ReportCard {
 
 	private double gpa;
-	private String overAllGrading;
+	private GradingScale overAllGrading;
 	
-	public String getOverAllGrading() {
+	public GradingScale getOverAllGrading() {
 		return overAllGrading;
 	}
-	public void setOverAllGrading(String overAllGrading) {
+	public void setOverAllGrading(GradingScale overAllGrading) {
 		this.overAllGrading = overAllGrading;
 	}
 	public double getGpa() {

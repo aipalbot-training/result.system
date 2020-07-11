@@ -6,6 +6,7 @@ import java.util.Scanner;
 import com.aipalbot.result.system.models.Course;
 import com.aipalbot.result.system.models.Student;
 import com.aipalbot.result.system.services.StudentService;
+import com.aipalbot.result.system.util.CommonConstants;
 import com.aipalbot.result.system.util.Department;
 import com.aipalbot.result.system.util.Gender;
 import com.aipalbot.result.system.util.Terminate;
@@ -21,9 +22,10 @@ public class App
     
     public static void main( String[] args )
     {
+    	
     	 service = new StudentService();
        
-    	 System.out.println( "Welcome to Student Result System 1.0 :-) :-) :-)" );
+    	 System.out.println( "*****************Welcome to Student Result System 1.0 ******************" );
       
         enterCourses();
         
@@ -47,10 +49,32 @@ public class App
       Student student =   service.createStudent(name, id, gender, dept);
       
       enterScores(student);
+    
+      service.prepareStudentResult(student);
       
+      System.out.println("Report Card for this semester:  GPA = " + student.getReportCard().getGpa()  +", Grade = "+ student.getReportCard().getOverAllGrading() );
       
       System.out.println("End of my program!!!");
-
+      
+      
+//
+//    	CommonConstants c = new CommonConstants();
+//    	c.rate = 50;
+//    	
+//    	CommonConstants.currency ="Yello-Blouse";
+//    	
+//    	String reset = CommonConstants.UNIFORM;
+//    	
+//    	while(true) {
+//    		
+//    		Course s = new Course();
+//    		
+//    		if(Course.getTotalNumberOfObjectsCreated() >= 10) break;   		
+//    	
+//    		
+//    	}
+//    	
+//    	System.out.println("Total number of courses created: " + Course.getTotalNumberOfObjectsCreated());
     }
     
     public static void enterCourses() {
